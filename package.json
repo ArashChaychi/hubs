@@ -16,6 +16,7 @@
     "info": "npm-scripts-info",
     "start": "webpack-dev-server --mode=development --env.loadAppConfig",
     "dev": "webpack-dev-server --mode=development --env.remoteDev",
+    "install-server": "cd scriptsServer && npm install",
     "start-server": "npm start --prefix scriptsServer",
     "start-dev": "concurrently \"npm run dev\" \"npm run start-server\"",
     "local": "webpack-dev-server --mode=development --env.localDev",
