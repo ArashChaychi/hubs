@@ -16,7 +16,7 @@
     "info": "npm-scripts-info",
     "start": "webpack-dev-server --mode=development --env.loadAppConfig",
     "dev": "webpack-dev-server --mode=development --env.remoteDev",
-    "start-server": "npm start --prefix topLevelServer",
+    "start-server": "npm start --prefix scriptsServer",
     "start-dev": "concurrently \"npm run dev\" \"npm run start-server\"",
     "local": "webpack-dev-server --mode=development --env.localDev",
     "build": "rimraf ./dist && webpack --mode=production",

@@ -4,7 +4,7 @@ config.hubsarray = [
     {
         hub_id: "nAm6WFM",
         urls: [
-            'example'
+            'https://cdn.jsdelivr.net/gh/ArashChaychi/hubs/scriptsServer/scripts/test.js'
         ]
     },
 ];
