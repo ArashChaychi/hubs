@@ -15,6 +15,9 @@ app.get(
     });
 
 
+app.use('/scripts', express.static('scripts'));
+
+
 app.listen(3000, () =>
     console.log("HTTP Server running on port 3000")
 );
