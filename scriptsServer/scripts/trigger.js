@@ -1,27 +1,29 @@
 const trigger = (() => {
     let el;
     
+    const getElement = () => el;
     
-    const addEventListeners = () => {
-        document.addEventListener('sceneLoaded', () => {
-            el = document.querySelector('.sampleTriggerglb').object3D;
-            utils.domEvents.addEventListener(el, 'click', () => {
-                door.interact();
-            }, false)
-        });
+    const init = async () => {
+        await utils.sceneReady;
+        addEventListeners();
     };
     
-
-    
-    
+    const addEventListeners = () => {
+        const { domEvents } = utils.getUtils();
+        el = document.querySelector('.sampleTriggerglb').object3D;
+        domEvents.addEventListener(el, 'click', () => {
+            door.interact();
+        }, false);
+    };
     
     return {
-        getElement: () => el,
-        addEventListeners
+        getElement,
+        init
     };
 })();
 
-
-trigger.addEventListeners();
+trigger.init()
+    .then(() => console.log('trigger successfully initialized'))
+    .catch(console.log);
 
 
