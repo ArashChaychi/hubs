@@ -1041,6 +1041,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     environmentScene.addEventListener("model-loaded", ({ detail: { model } }) => {
         console.log("Environment scene has loaded");
+        document.dispatchEvent(new Event('sceneLoaded'));
         
         if (!scene.is("entered")) {
             setupLobbyCamera();
