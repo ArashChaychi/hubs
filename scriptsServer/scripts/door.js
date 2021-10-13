@@ -36,7 +36,7 @@ const door = (() => {
         setState({isAnimating: true});
         const spec = {
             rotation: {
-                y: 0
+                y: -1.57
             },
             duration: 1000
         };

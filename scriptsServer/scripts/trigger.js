@@ -11,8 +11,8 @@ const trigger = (() => {
     const addEventListeners = () => {
         const { domEvents } = utils.getUtils();
         el = document.querySelector('.sampleTriggerglb').object3D;
-        domEvents.addEventListener(el, 'click', () => {
-            door.interact();
+        domEvents.addEventListener(el, 'click', async () => {
+            await door.interact();
         }, false);
     };
     

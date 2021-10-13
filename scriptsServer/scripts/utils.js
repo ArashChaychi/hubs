@@ -50,14 +50,25 @@ const utils = (() => {
             }
             
         };
-    
+        
         const finalState = {};
-    
+        
         const duration = spec.duration || 1000;
-    
+        
         ["position", "rotation", "scale"]
             .forEach(prop => {
-                if (spec[prop]) finalState[prop] = spec[prop];
+                if (!spec[prop]) return;
+                finalState[prop] = {};
+                if (prop === 'scale') {
+                    return Object.entries(spec[prop])
+                        .forEach(([name, value]) => {
+                            finalState[prop][name] = initialState[prop][name] * value;
+                        });
+                }
+                Object.entries(spec[prop])
+                    .forEach(([name, value]) => {
+                        finalState[prop][name] = initialState[prop][name] + value;
+                    });
             });
         
         return await animateNextFrame(initialState, finalState, startTime, element, duration);
