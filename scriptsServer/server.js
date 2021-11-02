@@ -16,6 +16,7 @@ app.get(
 
 
 app.use('/scripts', express.static('scripts'));
+app.use('/audio', express.static('audio'));
 
 
 app.listen(3000, () =>

@@ -44,6 +44,7 @@ const safe = (() => {
             },
             duration: 1000
         };
+        audioManager.playSafeDoorSound();
         await utils.animate(door, spec)
         setState({open: true, doorAnimating: false});
     };
@@ -83,6 +84,7 @@ const safe = (() => {
             if (state.hasKey) return;
             if (state.keyAnimating) return;
             await getKey();
+            audioManager.playKeySound();
         }, false);
     };
     

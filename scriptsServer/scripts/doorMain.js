@@ -26,11 +26,12 @@ const doorMain = (() => {
     const openDoor = async () => {
         const el = getElement();
         setState({isAnimating: true});
+        audioManager.playMainDoorSound();
         const spec = {
             rotation: {
                 y: 1.57
             },
-            duration: 1000
+            duration: 8000
         };
         await utils.animate(el, spec)
         setState({open: true, isAnimating: false});
@@ -42,7 +43,10 @@ const doorMain = (() => {
         domEvents.addEventListener(doorElement, 'click', async () => {
             if (state.open) return;
             if (state.isAnimating) return;
-            if (!safe.getState().hasKey) return;
+            if (!safe.getState().hasKey) {
+                audioManager.playLockedSound();
+                return;
+            }
             await openDoor();
         }, false);
 
