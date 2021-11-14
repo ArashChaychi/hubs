@@ -77,6 +77,7 @@ const safe = (() => {
         const key = getElement().key;
         domEvents.addEventListener(safeDoor, 'click', async () => {
             if (state.open) return;
+            if (!switchBox.getState().solved) return;
             await openSafe();
         }, false);
         domEvents.addEventListener(key, 'click', async () => {

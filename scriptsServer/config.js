@@ -16,6 +16,7 @@ config.hubsarray = [
             'http://localhost:3000/scripts/threex.domevents.js',
             'http://localhost:3000/scripts/utils.js',
             'http://localhost:3000/scripts/audioManager.js',
+            'http://localhost:3000/scripts/switchBox.js',
             'http://localhost:3000/scripts/safe.js',
             'http://localhost:3000/scripts/doorMain.js',
         ]
