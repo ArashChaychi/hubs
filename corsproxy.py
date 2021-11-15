@@ -22,7 +22,7 @@ def proxy(url):
     requests_function = method_requests_mapping[flask.request.method]
     request = requests_function(url, stream=True, params=flask.request.args)
     response = flask.Response(flask.stream_with_context(request.iter_content(chunk_size=1024)),
-                              content_type=request.headers['content-type'],
+#                               content_type=request.headers['content-type'],
                               status=request.status_code)
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
