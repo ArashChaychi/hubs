@@ -30,3 +30,4 @@ import "./particle-emitter";
 import "./audio-zone";
 import "./audio-zone-source";
 import "./my-element";
+import "./my-test-element";
