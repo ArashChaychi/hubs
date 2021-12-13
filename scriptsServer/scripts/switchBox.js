@@ -115,19 +115,6 @@ const switchBox = (() => {
                     }
                 }, false);
             });
-        // const safeDoor = getElement().door;
-        // const key = getElement().key;
-        // domEvents.addEventListener(safeDoor, 'click', async () => {
-        //     if (state.open) return;
-        //     await openSafe();
-        // }, false);
-        // domEvents.addEventListener(key, 'click', async () => {
-        //     if (!state.open) return;
-        //     if (state.hasKey) return;
-        //     if (state.keyAnimating) return;
-        //     await getKey();
-        //     audioManager.playKeySound();
-        // }, false);
     };
     
     return {

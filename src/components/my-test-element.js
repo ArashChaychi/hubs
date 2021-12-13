@@ -10,3 +10,4 @@ AFRAME.registerComponent("my-test-element", {
 
     }
 });
+

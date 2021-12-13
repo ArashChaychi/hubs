@@ -31,3 +31,8 @@ import "./audio-zone";
 import "./audio-zone-source";
 import "./my-element";
 import "./my-test-element";
+import "./utils";
+import "./switch-box";
+import "./safe-door";
+import "./safe-key";
+import "./room-door";
